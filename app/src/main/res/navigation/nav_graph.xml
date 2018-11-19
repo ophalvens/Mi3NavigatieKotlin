@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/startFragment">
+
+    <fragment android:id="@+id/startFragment" android:name="net.ophalvens.navigationtest.StartFragment"
+              android:label="fragment_start" tools:layout="@layout/fragment_start">
+        <action android:id="@+id/action_startFragment_to_toolsFragment" app:destination="@+id/toolsFragment"/>
+        <action android:id="@+id/action_to_slideshowFragment" app:destination="@+id/slideshowFragment"/>
+    </fragment>
+    <fragment android:id="@+id/toolsFragment" android:name="net.ophalvens.navigationtest.ToolsFragment"
+              android:label="fragment_tools" tools:layout="@layout/fragment_tools"/>
+    <activity android:id="@+id/mainActivity" android:name="net.ophalvens.navigationtest.MainActivity"
+              android:label="content_main" tools:layout="@layout/content_main"/>
+    <fragment android:id="@+id/slideshowFragment" android:name="net.ophalvens.navigationtest.SlideshowFragment"
+              android:label="fragment_slideshow" tools:layout="@layout/fragment_slideshow">
+        <argument android:name="aantal" app:argType="integer" android:defaultValue="10"/>
+    </fragment>
+</navigation>
